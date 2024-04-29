@@ -9,7 +9,7 @@ local actions = require("telescope.actions")
 local conf = require("telescope.config").values
 local pickers = require("telescope.pickers")
 
-menufacture.find_files_menu['change directory'] =
+menufacture.find_files_menu['change directory...'] =
 function(opts, callback)
 	pickers.new({}, {
 		prompt_title = 'select directory',
@@ -63,7 +63,7 @@ menufacture.menu_actions.change_into_parent_directory = {
 }
 
 
-menufacture.live_grep_menu['change directory'] = menufacture.find_files_menu['change directory']
+menufacture.live_grep_menu['change directory...'] = menufacture.find_files_menu['change directory...']
 menufacture.find_files_menu["change into directory"] = menufacture.menu_actions.change_into_directory
 menufacture.live_grep_menu["change into directory"] = menufacture.menu_actions.change_into_directory
 menufacture.find_files_menu["change into parent directory"] = menufacture.menu_actions.change_into_parent_directory

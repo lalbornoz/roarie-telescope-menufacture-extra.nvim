@@ -58,7 +58,7 @@ menufacture.menu_actions.increase_path_shorten = {
 	text = 'increase path shorten',
 }
 
-menufacture.find_files_menu['set maximum depth'] =
+menufacture.find_files_menu['set maximum depth...'] =
 function(opts, callback)
 	local max_depth = nil
 	menufacture.input("max_depth", "Maximum directory depth: ")(opts, function(opts, callback) end)
@@ -70,7 +70,7 @@ function(opts, callback)
 	callback(opts)
 end
 
-menufacture.live_grep_menu['set maximum depth'] =
+menufacture.live_grep_menu['set maximum depth...'] =
 function(opts, callback)
 	local max_depth = nil
 	menufacture.input("max_depth", "Maximum directory depth: ")(opts, function(opts, callback) end)
