@@ -60,15 +60,25 @@ menufacture.menu_actions.increase_path_shorten = {
 
 menufacture.find_files_menu['set maximum depth'] =
 function(opts, callback)
+	local max_depth = nil
 	menufacture.input("max_depth", "Maximum directory depth: ")(opts, function(opts, callback) end)
-	update_find_command(opts, "--max-depth=" .. opts.max_depth, "max_depth", '^--max%-depth=%d+$', (opts.max_depth ~= nil))
+	if opts.max_depth == nil then
+		opts.max_depth = max_depth
+	else
+		update_find_command(opts, "--max-depth=" .. opts.max_depth, "max_depth", '^--max%-depth=%d+$', (opts.max_depth ~= nil))
+	end
 	callback(opts)
 end
 
 menufacture.live_grep_menu['set maximum depth'] =
 function(opts, callback)
+	local max_depth = nil
 	menufacture.input("max_depth", "Maximum directory depth: ")(opts, function(opts, callback) end)
-	update_additional_args(opts, "--max-depth=" .. opts.max_depth, '^--max%-depth=%d+$', (opts.max_depth ~= nil))
+	if opts.max_depth == nil then
+		opts.max_depth = max_depth
+	else
+		update_additional_args(opts, "--max-depth=" .. opts.max_depth, '^--max%-depth=%d+$', (opts.max_depth ~= nil))
+	end
 	callback(opts)
 end
 

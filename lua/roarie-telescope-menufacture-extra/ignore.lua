@@ -11,8 +11,10 @@ function(opts, callback)
 		prompt="Ignore patterns in Lua syntax or {}: ",
 		default=vim.inspect(opts.file_ignore_patterns or {}),
 	}, function(input)
-		opts.file_ignore_patterns = load(
-			"return " .. input)()
+		if input ~= nil then
+			opts.file_ignore_patterns = load(
+				"return " .. input)()
+		end
 	end)
 	callback(opts)
 end
